@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NacostiEProcMVC", "NacostiEProcMVC\NacostiEProcMVC.csproj", "{8353E654-9E12-4E45-8AD8-CE6A3C90AA44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NacostiEProcMVC.Tests", "NacostiEProcMVC.Tests\NacostiEProcMVC.Tests.csproj", "{4373B83E-8270-465D-A4B3-85BD22B68133}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8353E654-9E12-4E45-8AD8-CE6A3C90AA44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8353E654-9E12-4E45-8AD8-CE6A3C90AA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8353E654-9E12-4E45-8AD8-CE6A3C90AA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8353E654-9E12-4E45-8AD8-CE6A3C90AA44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4373B83E-8270-465D-A4B3-85BD22B68133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4373B83E-8270-465D-A4B3-85BD22B68133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4373B83E-8270-465D-A4B3-85BD22B68133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4373B83E-8270-465D-A4B3-85BD22B68133}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
