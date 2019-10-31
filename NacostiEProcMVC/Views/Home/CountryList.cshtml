@@ -1,0 +1,8 @@
+﻿@model NacostiEProcMVC.Models.DropdownListsModel
+
+@{
+    Layout = null;
+}
+
+@Html.DropDownListFor(m => m.CountryId, Model.MyDropdownList, "--Choose Country--", new { @id = "ddlallcountries", @class = "form-group form-focus selectpicker", @data_live_search = "true" })
+

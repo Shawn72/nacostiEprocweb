@@ -1,0 +1,71 @@
+﻿@model IEnumerable<NacostiEProcMVC.Models.UploadedFile>
+
+@{
+    ViewBag.Title = "UploadedTenderDocs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="table-responsive">
+        <table class="table table-striped custom-table m-b-0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>File Name</th>
+                    <th>File Size (KiB)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Session["contactNo"] != null)
+            {
+                var sno = 0;
+                if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        sno++;
+                            <tr>
+                                <td>@sno</td>
+                                <td>@Html.DisplayFor(modelItem => item.FileName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Size)</td>
+                                <td>
+                                    <div class="txtfilepath" style="display: none;">
+                                        <span>@item.Path</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary pull-right rounded delete"><i class="fa fa-trash"></i> Remove</button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>
+                                <div class="alert alert-danger">No Files uploaded yet!</div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                            <a href="/Home/Login">Login First</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>File Name</th>
+                    <th>File Size (KiB)</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+

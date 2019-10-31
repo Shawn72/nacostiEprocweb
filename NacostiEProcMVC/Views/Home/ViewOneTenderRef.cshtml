@@ -1,0 +1,138 @@
+﻿@model IEnumerable<NacostiEProcMVC.Models.UploadedFile>
+@{
+    ViewBag.Title = "ViewOneTenderRef";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var tendorNumber = Request.QueryString["tenderNo"];
+    var entryNo = Request.QueryString["entryNo"];
+    Session["tendNo"] = tendorNumber;
+    Session["entryNo"] = entryNo;
+}
+
+<div class="content">
+    <div class="panel panel-table">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <div class="form-group">
+                    <h3><strong style="color: chocolate"> Apply for this Tender: @tendorNumber</strong></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-body">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table m-b-0" id="tbluploads">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>File Name</th>
+                            <th>File Size (KiB)</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if (Session["contactNo"] != null)
+                        {
+                            var sno = 0;
+                            if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    sno++;
+                                    <tr>
+                                        <td>@sno</td>
+                                        <td>@Html.DisplayFor(modelItem => item.FileName)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Size)</td>
+                                        <td>
+                                            <div class="txtfilepath" style="display: none;">
+                                                <span>@item.Path</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn btn-primary pull-right rounded delete"><i class="fa fa-trash"></i> Remove</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="alert alert-danger">No Files uploaded yet!</div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <a href="/Home/Login">Login First</a>
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>File Name</th>
+                            <th>File Size (KiB)</th>
+                            <th></th>
+                        </tr>
+                        </tfoot>
+
+                    </table>
+                </div>
+            </div>
+            <br/>
+
+            <div class="col-md-12">
+                @using (Html.BeginForm("UploadSpecificTenderDocs", "Home", FormMethod.Post, new {enctype = "multipart/form-data", @name = "documentsform", @id = "documentsform"}))
+                {
+                    <input type="hidden" id="tendorNum" value="@tendorNumber"/>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label class="control-label" style="font-weight: bold;">Select KRA PIN</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="file" name="postedFiles" id="postedFiles1" class="form-control" multiple="multiple"/>&nbsp;
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label class="control-label" style="font-weight: bold;">Select Tax Compliance</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="file" name="postedFiles" id="postedFiles2" class="form-control" multiple="multiple"/>&nbsp;
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label class="control-label" style="font-weight: bold;">Select Other Document</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="file" name="postedFiles" id="postedFiles3" class="form-control" multiple="multiple"/>&nbsp;
+                            <button type="submit" class="btn btn-success btn-block pull-right"><i class="fas fa-upload"></i>&nbsp;Upload</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="panel panel-table">
+            <div class="panel-body">
+                <div class="form-group">
+                    <span style="color: green">@Html.Raw(ViewBag.Message)</span>
+                </div>
+                <a href="/Home/AppliedTenders"><i class="fa fa-arrow-circle-left m-r-5"></i> Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

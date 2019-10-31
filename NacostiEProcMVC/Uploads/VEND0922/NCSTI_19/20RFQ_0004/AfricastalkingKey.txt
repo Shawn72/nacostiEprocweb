@@ -1,0 +1,6 @@
+http://192.168.0.3:7053/KNTC2018/OData/Company('Kenya%20National%20Trading%20Corp')/
+
+AfricasTalking SMS API Keys
+key for premium account shawn72 c3694e912192ea65613c54f2655264842ff2d17e1d60e2f25931b7bb6013d8d8
+
+key for premium account sandbox 5993ad726aa211acf774ee7e885a9c00db989575c18b7cb7d91574ebd890566a

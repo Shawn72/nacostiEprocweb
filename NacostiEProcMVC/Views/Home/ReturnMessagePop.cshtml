@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "ReturnMessagePop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Message Info</h2>
+<hr/>
+<br/>
+<div class="panel panel-table">
+    <div class="panel-body">
+        <div class="form-group">
+            <span style="color: green">@Html.Raw(ViewBag.Message)</span>
+        </div>
+        <a href="/Home/Index"><i class="fa fa-arrow-circle-left m-r-5"></i> Back</a>
+    </div>
+</div>
+

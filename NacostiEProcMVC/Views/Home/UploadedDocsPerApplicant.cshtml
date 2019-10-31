@@ -1,0 +1,74 @@
+﻿@model IEnumerable<NacostiEProcMVC.Models.UploadedFile>
+
+@{
+    ViewBag.Title = "UploadedDocsPerApplicant";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="table-responsive">
+        <table class="table table-striped custom-table m-b-0 datatable" id="tbluploads">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>File Name</th>
+                    <th>File Size (KiB)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Session["userNo"] != null)
+            {
+                var sno = 0;
+                if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        sno++;
+                            <tr>
+                                <td>@sno</td>
+                                <td>@Html.DisplayFor(modelItem => item.FileName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Size)</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><i class="fa fa-download m-r-5" style="color: aqua"> @Html.ActionLink("Download", "DownloadFile", new { filePath = @item.Path })</i></li>
+                                            <li><i class="fa fa-eye m-r-5" style="color: aqua"> @Html.ActionLink("View", "DownloadFile", new { filePath = @item.Path })</i></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>
+                                <div class="alert alert-danger">No Files uploaded yet!</div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td>
+                            <a href="/Home/Login">Login First</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>File Name</th>
+                    <th>File Size (KiB)</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+
+</div>

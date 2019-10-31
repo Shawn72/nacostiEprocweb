@@ -1,0 +1,6 @@
+﻿@model NacostiEProcMVC.Models.DropdownListsModel
+
+@{
+    Layout = null;
+}
+@Html.DropDownListFor(m => m.PostalId, Model.MyDropdownList, "--Choose Fiscal Year--", new { @id = "ddlfiscalyear", @class = "form-group form-focus selectpicker", @data_live_search = "true" })

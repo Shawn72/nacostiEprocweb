@@ -1,0 +1,89 @@
+﻿@model IEnumerable<NacostiEProcMVC.Models.TenderModel>
+
+@{
+    ViewBag.Title = "AwardedTenders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="panel panel-table">
+        <div class="panel-heading">
+            
+            <div class="panel-title">
+                <div class="form-group">
+                    <h3><strong style="color: chocolate"> Awarded Tenders</strong></h3>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <table class="table table-striped custom-table m-b-0 datatable">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tender No</th>
+                        <th>Title</th>
+                        <th>Status (Awarded)</th>
+                    </tr>
+                    </thead>
+                   
+                    <tbody>
+                    @if (Session["contactNo"] != null)
+                    {
+                        var sno = 0;
+                        if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                sno++;
+                                <tr>
+                                    <td>@sno</td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ref_No)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Successful)
+                                    </td>
+                                    
+                                </tr>
+
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <div class="alert alert-danger">No tender Applications yet!</div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>
+                                <a href="/Home/Login">Login First</a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Tender No</th>
+                        <th>Title</th>
+                        <th>Status (Awarded)</th>
+                    </tr>
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NacostiEProcMVC.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NacostiEProcMVC_EProcWebRef_eprocurement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://41.89.63.253:9047/TEST/WS/TEST%20COMPANY/Codeunit/eprocurement</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

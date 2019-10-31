@@ -1,31 +1,72 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div class="content container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-lg-3">
+            <div class="dash-widget clearfix card-box">
+                <span class="dash-widget-icon"><i class="fa fa-cubes" aria-hidden="true"></i></span>
+                <div class="dash-widget-info">
+                    <h3>0</h3>
+                    <span>RFQS Applied</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-3">
+            <div class="dash-widget clearfix card-box">
+                <span class="dash-widget-icon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                <div class="dash-widget-info">
+                    <h3>@Session["openTenders"] </h3>
+                    <span>Open Tenders</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-3">
+            <div class="dash-widget clearfix card-box">
+                <span class="dash-widget-icon"><i class="fa fa-diamond"></i></span>
+                <div class="dash-widget-info">
+                    <h3>@Session["appliedTenders"]</h3>
+                    <span>Tenders Applied</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-3">
+            <div class="dash-widget clearfix card-box">
+                <span class="dash-widget-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <div class="dash-widget-info">
+                    <h3>@Session["tendersAwarded"]</h3>
+                    <span>Tenders Awarded</span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+  
+    <div class="row">
+        <div class="col-xs-4">
+            <h4 class="page-title"></h4>
+        </div>
+        <div class="col-xs-8 text-right m-b-30">
+            <a href="/Home/UploadFiles" class="btn btn-primary pull-right rounded"><i class="fa fa-plus"></i> Attach Documents</a>
+            <div class="view-icons">
+                <a href="#" class="grid-view btn btn-link"><i class="fa fa-th"></i></a>
+                <a href="#" class="list-view btn btn-link active"><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+   
+    
+    <div class="panel panel-table">
+        <div class="panel-heading">
+            <h3 class="panel-title"> Attached Documents</h3>
+        </div>
+        <div class="panel-body">
+            <span id="feedbackMsg" style="display: none"></span><br />
+            @Html.Action("UploadsList", "Home")
+        </div>
+				
     </div>
+   
 </div>

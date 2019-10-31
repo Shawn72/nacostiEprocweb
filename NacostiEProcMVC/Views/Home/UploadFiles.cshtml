@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "UploadFiles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="panel panel-table">
+        <div class="panel-heading">
+            
+            <div class="panel-title">
+                <div class="form-group">
+                    <h3><strong style="color: chocolate"> Kindly select and upload the following documents</strong></h3>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+           
+        @using (Html.BeginForm("GetAllFilesnUpload", "Home", FormMethod.Post, new {enctype = "multipart/form-data", @name = "documentsform", @id = "documentsform"}))
+        {
+           
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label class="control-label" style="font-weight: bold;">Select KRA PIN</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" name="postedFiles" id="postedFiles1" class="form-control" multiple="multiple" />&nbsp;
+
+                </div>
+               
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label class="control-label" style="font-weight: bold;">Select Tax Compliance</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" name="postedFiles" id="postedFiles2" class="form-control" multiple="multiple" />&nbsp;
+
+                </div>
+               
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label class="control-label" style="font-weight: bold;">Select Other Document</label>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" name="postedFiles" id="postedFiles3" class="form-control" multiple="multiple" />&nbsp;
+                    <button type="submit" class="btn btn-success btn-block pull-right" ><i class="fas fa-upload"></i>&nbsp;Upload</button>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+    
+    <div class="panel panel-table">
+        <div class="panel-body">
+            <div class="form-group">
+                <span style="color: green">@Html.Raw(ViewBag.Message)</span>
+            </div>
+        </div>
+    </div>
+
+</div>

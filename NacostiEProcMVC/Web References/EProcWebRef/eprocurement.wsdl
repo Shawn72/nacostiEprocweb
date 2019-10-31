@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/eprocurement" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/eprocurement" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="FnRegisterVendor">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="vendorName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="supplierCategory" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="country" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="postAddress" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="postCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="phoneNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="kraPin" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="taxCompliance" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="confirmPassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnRegisterVendor_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ResetPass">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ResetPass_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApplyPreQualification">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="supplierCategory" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fiscalYear" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApplyPreQualification_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetCurrentYear">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="GetCurrentYear_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ApplyRFQ">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="quantity" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="rfqNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ApplyRFQ_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ApplyRFQOLD">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="quantity" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="rfqNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ApplyRFQOLD_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ActivateAccount">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="userCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="key" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="confirmpassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ActivateAccount_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AddDirectors">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="director1" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="director2" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="director3" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AddDirectors_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ChangePassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="currentPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="newPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="confirmPassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ChangePassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApplyforTender">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="tenderNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="vendorNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApplyforTender_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCountOpenTenders">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnCountOpenTenders_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCountAppliedTenders">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="vendorNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCountAppliedTenders_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCountTendersAwarded">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="vendorNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCountTendersAwarded_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApplyforOpenTender">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="tenderNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="amount" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="contactNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnApplyforOpenTender_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="FnRegisterVendor">
+    <part name="parameters" element="tns:FnRegisterVendor" />
+  </message>
+  <message name="FnRegisterVendor_Result">
+    <part name="parameters" element="tns:FnRegisterVendor_Result" />
+  </message>
+  <message name="ResetPass">
+    <part name="parameters" element="tns:ResetPass" />
+  </message>
+  <message name="ResetPass_Result">
+    <part name="parameters" element="tns:ResetPass_Result" />
+  </message>
+  <message name="FnApplyPreQualification">
+    <part name="parameters" element="tns:FnApplyPreQualification" />
+  </message>
+  <message name="FnApplyPreQualification_Result">
+    <part name="parameters" element="tns:FnApplyPreQualification_Result" />
+  </message>
+  <message name="GetCurrentYear">
+    <part name="parameters" element="tns:GetCurrentYear" />
+  </message>
+  <message name="GetCurrentYear_Result">
+    <part name="parameters" element="tns:GetCurrentYear_Result" />
+  </message>
+  <message name="ApplyRFQ">
+    <part name="parameters" element="tns:ApplyRFQ" />
+  </message>
+  <message name="ApplyRFQ_Result">
+    <part name="parameters" element="tns:ApplyRFQ_Result" />
+  </message>
+  <message name="ApplyRFQOLD">
+    <part name="parameters" element="tns:ApplyRFQOLD" />
+  </message>
+  <message name="ApplyRFQOLD_Result">
+    <part name="parameters" element="tns:ApplyRFQOLD_Result" />
+  </message>
+  <message name="ActivateAccount">
+    <part name="parameters" element="tns:ActivateAccount" />
+  </message>
+  <message name="ActivateAccount_Result">
+    <part name="parameters" element="tns:ActivateAccount_Result" />
+  </message>
+  <message name="AddDirectors">
+    <part name="parameters" element="tns:AddDirectors" />
+  </message>
+  <message name="AddDirectors_Result">
+    <part name="parameters" element="tns:AddDirectors_Result" />
+  </message>
+  <message name="ChangePassword">
+    <part name="parameters" element="tns:ChangePassword" />
+  </message>
+  <message name="ChangePassword_Result">
+    <part name="parameters" element="tns:ChangePassword_Result" />
+  </message>
+  <message name="FnApplyforTender">
+    <part name="parameters" element="tns:FnApplyforTender" />
+  </message>
+  <message name="FnApplyforTender_Result">
+    <part name="parameters" element="tns:FnApplyforTender_Result" />
+  </message>
+  <message name="FnCountOpenTenders">
+    <part name="parameters" element="tns:FnCountOpenTenders" />
+  </message>
+  <message name="FnCountOpenTenders_Result">
+    <part name="parameters" element="tns:FnCountOpenTenders_Result" />
+  </message>
+  <message name="FnCountAppliedTenders">
+    <part name="parameters" element="tns:FnCountAppliedTenders" />
+  </message>
+  <message name="FnCountAppliedTenders_Result">
+    <part name="parameters" element="tns:FnCountAppliedTenders_Result" />
+  </message>
+  <message name="FnCountTendersAwarded">
+    <part name="parameters" element="tns:FnCountTendersAwarded" />
+  </message>
+  <message name="FnCountTendersAwarded_Result">
+    <part name="parameters" element="tns:FnCountTendersAwarded_Result" />
+  </message>
+  <message name="FnApplyforOpenTender">
+    <part name="parameters" element="tns:FnApplyforOpenTender" />
+  </message>
+  <message name="FnApplyforOpenTender_Result">
+    <part name="parameters" element="tns:FnApplyforOpenTender_Result" />
+  </message>
+  <portType name="eprocurement_Port">
+    <operation name="FnRegisterVendor">
+      <input name="FnRegisterVendor" message="tns:FnRegisterVendor" />
+      <output name="FnRegisterVendor_Result" message="tns:FnRegisterVendor_Result" />
+    </operation>
+    <operation name="ResetPass">
+      <input name="ResetPass" message="tns:ResetPass" />
+      <output name="ResetPass_Result" message="tns:ResetPass_Result" />
+    </operation>
+    <operation name="FnApplyPreQualification">
+      <input name="FnApplyPreQualification" message="tns:FnApplyPreQualification" />
+      <output name="FnApplyPreQualification_Result" message="tns:FnApplyPreQualification_Result" />
+    </operation>
+    <operation name="GetCurrentYear">
+      <input name="GetCurrentYear" message="tns:GetCurrentYear" />
+      <output name="GetCurrentYear_Result" message="tns:GetCurrentYear_Result" />
+    </operation>
+    <operation name="ApplyRFQ">
+      <input name="ApplyRFQ" message="tns:ApplyRFQ" />
+      <output name="ApplyRFQ_Result" message="tns:ApplyRFQ_Result" />
+    </operation>
+    <operation name="ApplyRFQOLD">
+      <input name="ApplyRFQOLD" message="tns:ApplyRFQOLD" />
+      <output name="ApplyRFQOLD_Result" message="tns:ApplyRFQOLD_Result" />
+    </operation>
+    <operation name="ActivateAccount">
+      <input name="ActivateAccount" message="tns:ActivateAccount" />
+      <output name="ActivateAccount_Result" message="tns:ActivateAccount_Result" />
+    </operation>
+    <operation name="AddDirectors">
+      <input name="AddDirectors" message="tns:AddDirectors" />
+      <output name="AddDirectors_Result" message="tns:AddDirectors_Result" />
+    </operation>
+    <operation name="ChangePassword">
+      <input name="ChangePassword" message="tns:ChangePassword" />
+      <output name="ChangePassword_Result" message="tns:ChangePassword_Result" />
+    </operation>
+    <operation name="FnApplyforTender">
+      <input name="FnApplyforTender" message="tns:FnApplyforTender" />
+      <output name="FnApplyforTender_Result" message="tns:FnApplyforTender_Result" />
+    </operation>
+    <operation name="FnCountOpenTenders">
+      <input name="FnCountOpenTenders" message="tns:FnCountOpenTenders" />
+      <output name="FnCountOpenTenders_Result" message="tns:FnCountOpenTenders_Result" />
+    </operation>
+    <operation name="FnCountAppliedTenders">
+      <input name="FnCountAppliedTenders" message="tns:FnCountAppliedTenders" />
+      <output name="FnCountAppliedTenders_Result" message="tns:FnCountAppliedTenders_Result" />
+    </operation>
+    <operation name="FnCountTendersAwarded">
+      <input name="FnCountTendersAwarded" message="tns:FnCountTendersAwarded" />
+      <output name="FnCountTendersAwarded_Result" message="tns:FnCountTendersAwarded_Result" />
+    </operation>
+    <operation name="FnApplyforOpenTender">
+      <input name="FnApplyforOpenTender" message="tns:FnApplyforOpenTender" />
+      <output name="FnApplyforOpenTender_Result" message="tns:FnApplyforOpenTender_Result" />
+    </operation>
+  </portType>
+  <binding name="eprocurement_Binding" type="tns:eprocurement_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="FnRegisterVendor">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnRegisterVendor" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnRegisterVendor">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnRegisterVendor_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ResetPass">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:ResetPass" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ResetPass">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ResetPass_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnApplyPreQualification">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnApplyPreQualification" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnApplyPreQualification">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnApplyPreQualification_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetCurrentYear">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:GetCurrentYear" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetCurrentYear">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetCurrentYear_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ApplyRFQ">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:ApplyRFQ" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ApplyRFQ">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ApplyRFQ_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ApplyRFQOLD">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:ApplyRFQOLD" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ApplyRFQOLD">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ApplyRFQOLD_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ActivateAccount">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:ActivateAccount" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ActivateAccount">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ActivateAccount_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="AddDirectors">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:AddDirectors" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="AddDirectors">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="AddDirectors_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ChangePassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:ChangePassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ChangePassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ChangePassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnApplyforTender">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnApplyforTender" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnApplyforTender">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnApplyforTender_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCountOpenTenders">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnCountOpenTenders" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCountOpenTenders">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCountOpenTenders_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCountAppliedTenders">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnCountAppliedTenders" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCountAppliedTenders">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCountAppliedTenders_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCountTendersAwarded">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnCountTendersAwarded" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCountTendersAwarded">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCountTendersAwarded_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnApplyforOpenTender">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/eprocurement:FnApplyforOpenTender" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnApplyforOpenTender">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnApplyforOpenTender_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="eprocurement">
+    <port name="eprocurement_Port" binding="tns:eprocurement_Binding">
+      <address location="http://41.89.63.253:9047/TEST/WS/TEST%20COMPANY/Codeunit/eprocurement" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

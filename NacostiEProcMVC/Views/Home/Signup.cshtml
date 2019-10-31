@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_Account_Layout.cshtml";
+}
+
+<h3 class="account-title">Vendor Registration </h3>
+<div class="account-box">
+    <div class="account-wrapper">
+        <div class="account-logo">
+            <a href="/Home/Login"><img src="/assets/img/logo.png" alt="NACOSTI"></a>
+        </div>
+        <span id="loginMsg" style="display: none"></span><br/>
+        <form action="" method="post">
+            <div class="form-group form-focus">
+                <label class="control-label">Vendor Name</label>
+                <input class="form-control floating" type="text" id="txtVendorName">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            
+            <div class="form-group form-focus">
+                @*populate from Nav*@
+                @Html.Action("CountryList", "Home")
+            </div>
+            
+            <div class="form-group form-focus">
+                <label class="control-label">Postal Address</label>
+                <input class="form-control floating" type="number" id="txtAddress">
+                <span class="glyphicon glyphicon-map-marker form-control-feedback"></span>
+            </div>
+            
+            <div class="">
+                @Html.Action("PostalCodeList", "Home")
+            </div>
+            
+            <div class="form-group form-focus">
+                <label class="control-label">City</label>
+                <input class="form-control floating" type="text" id="txtCity" disabled="disabled" value="">
+                <span class="fas fa-city form-control-feedback"></span>
+            </div>
+
+            <div class="form-group form-focus">
+                <label class="control-label">Phone Number</label>
+                <input class="form-control floating" type="text" id="txtPhonenumber">
+                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+            </div>
+            
+            <div class="form-group form-focus">
+                <label class="control-label">Tax Compliance Certificate Number</label>
+                <input class="form-control floating" type="text" id="txtTaxcomplpin">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            
+            <div class="form-group form-focus">
+                <label class="control-label">K.R.A PIN</label>
+                <input class="form-control floating" type="text" id="txtKRAPin">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            
+            <div class="form-group form-focus">
+                <label class="control-label">Email Address</label>
+                <input class="form-control floating" type="text" id="txtEmailAdd" onblur="validateEmail()">
+                <span class="fas fa-at form-control-feedback"></span>
+            </div>
+
+            <div class="form-group form-focus">
+                <label class="control-label">Password</label>
+                <input class="form-control floating" type="password" id="txtPass1">
+                <span class="fas fa-key form-control-feedback"></span>
+            </div>
+            <div class="form-group form-focus">
+                <label class="control-label">Repeat Password</label>
+                <input class="form-control floating" type="password" id="txtPass2">
+                <span class="fas fa-key form-control-feedback"></span>
+            </div>
+            <div class="form-group text-center">
+                <input class="btn btn-primary btn-block account-btn" type="submit" id="btnRegister" value="Register">
+            </div>
+            <div class="text-center">
+                <a href="/Home/Login">Already have an account?</a>
+            </div>
+        </form>
+        
+        <div class="clearfix form-group">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" id="gifLoading" style="display: none">
+                <img src="~/assets/loaders/load.gif" width="100" height="100"/>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+

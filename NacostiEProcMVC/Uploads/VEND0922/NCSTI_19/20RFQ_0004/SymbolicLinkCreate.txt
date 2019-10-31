@@ -1,0 +1,5 @@
+\\41.89.63.253\Board Meeting Card\
+
+mklink /D "D:\ERPDocuments\NACOSTI\Board Meeting Card\" "\\41.89.63.253\Board Meeting Card\"
+
+

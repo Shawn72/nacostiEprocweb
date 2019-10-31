@@ -1,0 +1,49 @@
+﻿@model IEnumerable<NacostiEProcMVC.navOData.SupplyCategoryHeader>
+
+@{
+    ViewBag.Title = "SupplierCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>SupplierCategory</h4>
+
+<div class="col-md-12">
+<div class="table-responsive">
+    <table class="table table-striped custom-table m-b-0 datatable">
+        <thead>
+        <tr>
+            <th>
+                Category
+            </th>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Fiscal Year
+            </th>
+        </tr>
+
+        </thead>
+        <tbody>
+    
+   
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fiscal_Year)
+                </td>
+            </tr>
+        }
+        </tbody>
+
+    </table>
+
+</div>
+</div>

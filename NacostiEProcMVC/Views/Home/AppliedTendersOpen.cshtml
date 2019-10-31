@@ -1,0 +1,109 @@
+﻿@model IEnumerable<NacostiEProcMVC.Models.TenderModel>
+
+@{
+    ViewBag.Title = "AppliedTendersOpen";
+    Layout = "~/Views/Shared/_NonQualified_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="panel panel-table">
+        <div class="panel-heading">
+            
+            <div class="panel-title">
+                <div class="form-group">
+                    <h3><strong style="color: chocolate"> Applied Tenders</strong></h3>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <table class="table table-striped custom-table m-b-0 datatable">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tender No</th>
+                        <th>Title</th>
+                        <th>Prequalified</th>
+                        <th>Selected</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                   
+                    <tbody>
+                    @if (Session["contactNo"] != null)
+                    {
+                        var sno = 0;
+                        if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                sno++;
+                                <tr>
+                                    <td>@sno</td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ref_No)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Prequalified)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Selected)
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="dropdown">
+                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li><a href="/Home/ViewOneTenderRef?entryNo=@item.EntryNo&&tenderNo=@item.Ref_No" ><i class="fa fa-upload m-r-5"></i> Attach Documents</a></li>
+                                                <li><a href="/Home/ViewOneTenderRef?entryNo=@item.EntryNo&&tenderNo=@item.Ref_No"><i class="fa fa-eye m-r-5"></i> View</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    <div class="alert alert-danger">No tender Applications yet!</div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>
+                                <a href="/Home/Login">Login First</a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Tender No</th>
+                        <th>Title</th>
+                        <th>Prequalified</th>
+                        <th>Selected</th>
+                        <th>Actions</th>
+                    </tr>
+                    </tfoot>
+
+
+                    @foreach (var item in Model)
+                    {
+                     
+                    }
+
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>

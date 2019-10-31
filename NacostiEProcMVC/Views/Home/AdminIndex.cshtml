@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="content container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-lg-3">
+            <div class="dash-widget clearfix card-box">
+                <span class="dash-widget-icon"><i class="fa fa-cubes" aria-hidden="true"></i></span>
+                <div class="dash-widget-info">
+                    <h3>0</h3>
+                    <span>RFQS Awarded</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-3">
+            <div class="dash-widget clearfix card-box">
+                <span class="dash-widget-icon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                <div class="dash-widget-info">
+                    <h3>0</h3>
+                    <span>Prequalifications Applied</span>
+                </div>
+               </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-3">
+            <div class="dash-widget clearfix card-box">
+                <span class="dash-widget-icon"><i class="fa fa-diamond"></i></span>
+                <div class="dash-widget-info">
+                    <h3>0</h3>
+                    <span>Open Tenders</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-lg-3">
+            <div class="dash-widget clearfix card-box">
+                <span class="dash-widget-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                <div class="dash-widget-info">
+                    <h3>0</h3>
+                    <span>Tenders Awarded</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <h4 class="page-title"></h4>
+        </div>
+        <div class="col-xs-8 text-right m-b-30">
+            <a href="/Home/UploadFiles" class="btn btn-primary pull-right rounded"><i class="fa fa-plus"></i> Attach Documents</a>
+            <div class="view-icons">
+                <a href="#" class="grid-view btn btn-link"><i class="fa fa-th"></i></a>
+                <a href="#" class="list-view btn btn-link active"><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-table">
+        <div class="panel-heading">
+            <h3 class="panel-title"> Attached Documents</h3>
+        </div>
+        <div class="panel-body">
+            <span id="feedbackMsg" style="display: none"></span><br />
+           
+        </div>
+
+    </div>
+
+</div>
+

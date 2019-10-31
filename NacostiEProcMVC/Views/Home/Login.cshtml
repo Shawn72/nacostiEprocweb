@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Account_Layout.cshtml";
+}
+
+    <!-- /.login-logo -->
+    <div class="container">
+
+        <div id="vendor-login">
+        <div class="account-box">
+            <div class="account-wrapper">
+                <div class="account-logo">
+                    <a href="#"><img src="/images/logo.png"/></a>
+                </div>
+
+                <p class="login-box-msg">Sign in to Your Vendor Account</p>
+                <span id="loginMsg" style="display: none"></span><br/>
+
+                <form role="form" method="post" id="vendor_login" accept-charset="UTF-8">
+                    <div class="form-group form-focus">
+                        <label for="vendor_email" class="control-label">Email</label>
+
+                        <input type="email" value="" name="vendor[email]" id="vendor_email" class="form-control" size="30"/>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group form-focus">
+                        <label for="vendor_password" class="control-label">Password</label>
+
+                        <input type="password" value="" name="vendor_password" id="vendor_password" class="form-control" size="16" placeholder="type password"/>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+
+                    <div class="form-group form-focus">
+                        <input type="submit" value="Sign In" id="btnLogin" style="border-radius: 4px; text-transform: uppercase !important; color: white; background-color: #367fa9; border: none" class="btn btn-primary btn-block account-btn"/>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+                <div class="text-center">
+                    <p>- OR -</p>
+                </div>
+
+
+                <a href="#" onclick="showRecoverPasswordForm();return false;">Reset your password?</a>&nbsp;
+                <a href="/Home/Signup" class="text-center">Create a Vendor Account</a>
+
+                <div class="clearfix form-group">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4" id="gifLoading" style="display: none">
+                        <img src="~/assets/loaders/load.gif" width="100" height="100"/>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Recover Password Form -->
+        <div id="recover-password" style='display:none' class="customer customer__recover">
+            <h2 class="page_heading">Reset Password</h2>
+            <p class="note">We will send you an email to reset your password.</p>
+            <div id="statMsg"></div>
+            <br />
+
+            <form role="form" method="post" accept-charset="UTF-8">
+                <input type="hidden" name="form_type" value="recover_customer_password" /><input type="hidden" name="utf8" value="✓" />
+                <div id="recover_email" class="clearfix form-horizontal">
+                    <div class="form-group">
+                        <label for="customer_no" class="large col-sm-4">Customer Number</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" value="" size="30" name="customer_no" id="customer_no" />
+                        </div>
+                    </div>
+                    <div class="form-group action_bottom ">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <input class="btn btn-primary" type="submit" value="Reset Password" id="btnRecoverPassword" name="btnRecoverPassword" />
+                            <span class="note">or <a href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a></span>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+<!-- /.login-box-body -->
+
+<script type="text/javascript">
+    const showRecoverPasswordForm = () => {
+        document.getElementById('recover-password').style.display = 'block';
+        document.getElementById('vendor-login').style.display = 'none';
+    }
+
+    const hideRecoverPasswordForm = () => {
+        document.getElementById('recover-password').style.display = 'none';
+        document.getElementById('vendor-login').style.display = 'block';
+    }
+
+    if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+</script>

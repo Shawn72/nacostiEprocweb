@@ -1,0 +1,5 @@
+192.168.0.215:3038/api/values/FnfindVendorfromAx?kraPin={kraPin}&vendorGroup={vendorGroup}&idNo={idNo}
+
+192.168.0.215:3038/api/values/FnInsertApDetailsOnAx?journalType={journalType}&tranxDate={tranxDate}&ledgerAccount={ledgerAccount}&department={department}&profitcenter={profitcenter}&division={division}&classes={classes}&product={product}&description={description}&invoice={invoice}&amountDebit={amountDebit}&amountCredit={amountCredit}
+
+okumugilbert@gmail.com
